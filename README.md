@@ -1,5 +1,12 @@
 # Smart Hospital & Patient Management System
 
+[![Live Demo](https://img.shields.io/badge/Live_App-Open_Condition-0284c7?style=for-the-badge&logo=googlechrome&logoColor=white)](https://bharath-2408.github.io/Hospital-Management-SYSTEM/)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Bharath-2408/Hospital-Management-SYSTEM)
+
+> 🚀 **LIVE APP (OPEN CONDITION)**:  
+> **[👉 Click here to Open the Live Hospital Management System](https://bharath-2408.github.io/Hospital-Management-SYSTEM/)**  
+> *(Runs instantly in any browser with full CRUD, role switcher, appointment bookings, prescriptions, invoices, and CSV exports — zero install required!)*
+
 A production-style, fully functional, academic full-stack web application designed for comprehensive hospital workflow automation, patient lifecycle management, clinical documentation, and billing administration.
 
 Built strictly in adherence to the **CRUD Web Application SOP** and academic evaluation guidelines.
