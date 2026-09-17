@@ -1,0 +1,253 @@
+{
+  "info": {
+    "name": "Smart Hospital & Patient Management System API",
+    "_postman_id": "smart-hospital-api-collection-2026",
+    "description": "Comprehensive REST API Collection for Smart Hospital & Patient Management System (Django REST Framework + SQLite)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:8000/api",
+      "type": "string"
+    },
+    {
+      "key": "auth_token",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Login (Admin)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"admin123\"\n}"
+            },
+            "url": { "raw": "{{base_url}}/auth/login/", "host": ["{{base_url}}"], "path": ["auth", "login", ""] }
+          }
+        },
+        {
+          "name": "Register New Patient User",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"new_patient_user\",\n  \"password\": \"admin123\",\n  \"email\": \"newpatient@hospital.org\",\n  \"first_name\": \"Claire\",\n  \"last_name\": \"Dunphy\",\n  \"phone\": \"+1 (555) 443-2211\",\n  \"blood_group\": \"A+\"\n}"
+            },
+            "url": { "raw": "{{base_url}}/auth/register/", "host": ["{{base_url}}"], "path": ["auth", "register", ""] }
+          }
+        },
+        {
+          "name": "Current User Profile",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Token {{auth_token}}" }],
+            "url": { "raw": "{{base_url}}/auth/user/", "host": ["{{base_url}}"], "path": ["auth", "user", ""] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Patients",
+      "item": [
+        {
+          "name": "List Patients",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Token {{auth_token}}" }],
+            "url": { "raw": "{{base_url}}/patients/", "host": ["{{base_url}}"], "path": ["patients", ""] }
+          }
+        },
+        {
+          "name": "Create Patient (POST)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Token {{auth_token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"full_name\": \"David Miller\",\n  \"age\": 45,\n  \"gender\": \"Male\",\n  \"blood_group\": \"O+\",\n  \"phone\": \"+1 (555) 332-9900\",\n  \"email\": \"david.miller@example.com\",\n  \"address\": \"42 Wallaby Way\",\n  \"emergency_contact_name\": \"Sarah Miller\",\n  \"emergency_contact_phone\": \"+1 (555) 332-9911\",\n  \"status\": \"Active\"\n}"
+            },
+            "url": { "raw": "{{base_url}}/patients/", "host": ["{{base_url}}"], "path": ["patients", ""] }
+          }
+        },
+        {
+          "name": "Update Patient (PATCH)",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              { "key": "Authorization", "value": "Token {{auth_token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"Admitted\"\n}"
+            },
+            "url": { "raw": "{{base_url}}/patients/1/", "host": ["{{base_url}}"], "path": ["patients", "1", ""] }
+          }
+        },
+        {
+          "name": "Delete Patient (DELETE)",
+          "request": {
+            "method": "DELETE",
+            "header": [{ "key": "Authorization", "value": "Token {{auth_token}}" }],
+            "url": { "raw": "{{base_url}}/patients/1/", "host": ["{{base_url}}"], "path": ["patients", "1", ""] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Doctors",
+      "item": [
+        {
+          "name": "List Doctors",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Token {{auth_token}}" }],
+            "url": { "raw": "{{base_url}}/doctors/", "host": ["{{base_url}}"], "path": ["doctors", ""] }
+          }
+        },
+        {
+          "name": "Create Doctor (POST)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Token {{auth_token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"first_name\": \"Gregory\",\n  \"last_name\": \"House\",\n  \"department\": 1,\n  \"specialization\": \"Diagnostic Medicine\",\n  \"qualification\": \"MD, Johns Hopkins\",\n  \"experience_years\": 20,\n  \"consultation_fee\": 250.00,\n  \"phone\": \"+1 (555) 777-1000\",\n  \"email\": \"dr.house@smarthospital.org\",\n  \"status\": \"Active\",\n  \"available_days\": \"Mon, Wed, Fri\",\n  \"available_time_start\": \"10:00:00\",\n  \"available_time_end\": \"16:00:00\"\n}"
+            },
+            "url": { "raw": "{{base_url}}/doctors/", "host": ["{{base_url}}"], "path": ["doctors", ""] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Appointments",
+      "item": [
+        {
+          "name": "List Appointments",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Token {{auth_token}}" }],
+            "url": { "raw": "{{base_url}}/appointments/", "host": ["{{base_url}}"], "path": ["appointments", ""] }
+          }
+        },
+        {
+          "name": "Book Appointment (POST)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Token {{auth_token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"patient\": 1,\n  \"doctor\": 1,\n  \"appointment_date\": \"2026-09-20\",\n  \"appointment_time\": \"14:00:00\",\n  \"reason\": \"Routine cardiac health assessment.\"\n}"
+            },
+            "url": { "raw": "{{base_url}}/appointments/", "host": ["{{base_url}}"], "path": ["appointments", ""] }
+          }
+        },
+        {
+          "name": "Update Appointment Status (POST)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Token {{auth_token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"Completed\",\n  \"notes\": \"Patient attended examination. Prescribed medication.\"\n}"
+            },
+            "url": { "raw": "{{base_url}}/appointments/1/update_status/", "host": ["{{base_url}}"], "path": ["appointments", "1", "update_status", ""] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Billing & Payments",
+      "item": [
+        {
+          "name": "List Invoices",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Token {{auth_token}}" }],
+            "url": { "raw": "{{base_url}}/bills/", "host": ["{{base_url}}"], "path": ["bills", ""] }
+          }
+        },
+        {
+          "name": "Generate Bill (POST)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Token {{auth_token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"patient\": 1,\n  \"total_amount\": \"150.00\",\n  \"discount\": \"10.00\",\n  \"tax\": \"5.00\",\n  \"description\": \"Specialist Cardiology Consultation\"\n}"
+            },
+            "url": { "raw": "{{base_url}}/bills/", "host": ["{{base_url}}"], "path": ["bills", ""] }
+          }
+        },
+        {
+          "name": "Record Payment (POST)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Token {{auth_token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"bill\": 1,\n  \"amount\": \"145.00\",\n  \"payment_method\": \"UPI\",\n  \"transaction_id\": \"UPI-TXN-112233\"\n}"
+            },
+            "url": { "raw": "{{base_url}}/payments/", "host": ["{{base_url}}"], "path": ["payments", ""] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Dashboard & Reports",
+      "item": [
+        {
+          "name": "Dashboard Stats",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Token {{auth_token}}" }],
+            "url": { "raw": "{{base_url}}/dashboard/stats/", "host": ["{{base_url}}"], "path": ["dashboard", "stats", ""] }
+          }
+        },
+        {
+          "name": "Reports & Analytics",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Token {{auth_token}}" }],
+            "url": { "raw": "{{base_url}}/reports/", "host": ["{{base_url}}"], "path": ["reports", ""] }
+          }
+        },
+        {
+          "name": "Export Patients CSV",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Token {{auth_token}}" }],
+            "url": { "raw": "{{base_url}}/reports/export-csv/?type=patients", "host": ["{{base_url}}"], "path": ["reports", "export-csv", ""], "query": [{ "key": "type", "value": "patients" }] }
+          }
+        }
+      ]
+    }
+  ]
+}

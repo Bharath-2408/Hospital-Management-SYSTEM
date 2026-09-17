@@ -1,0 +1,1547 @@
+# MASTER PROMPT — SMART HOSPITAL & PATIENT MANAGEMENT SYSTEM
+
+Build a complete, production-style full-stack web application named:
+
+**“Smart Hospital & Patient Management System”**
+
+IMPORTANT:
+
+This is an academic full-stack CRUD project.
+
+The application must strictly follow the provided CRUD Web Application SOP.
+
+DO NOT create only a frontend prototype.
+
+DO NOT create fake/static CRUD.
+
+Build a genuinely functional:
+
+* React frontend
+* Python Django backend
+* Django REST Framework REST API
+* SQLite database
+* Authentication
+* Role-based authorization
+* Patient management
+* Doctor management
+* Appointment management
+* Department management
+* Medical record management
+* Prescription management
+* Billing and payment records
+* Notifications
+* Dashboard
+* Reports
+* Search/filter
+* Validation
+* Error handling
+
+All major operations must work end-to-end:
+
+**React → REST API → Django REST Framework → Django ORM → SQLite**
+
+==================================================
+
+# 1. TECHNOLOGY STACK
+
+## Frontend:
+
+* React.js
+* HTML5
+* CSS3
+* JavaScript
+* Axios or Fetch API
+* React Router
+* Responsive design
+
+## Backend:
+
+* Python
+* Django
+* Django REST Framework
+
+## Database:
+
+* SQLite
+* Django ORM
+
+## Authentication:
+
+* Django authentication
+* Secure password hashing
+* Role-based permissions
+* Session or secure token authentication
+
+## Charts:
+
+* Recharts or Chart.js
+
+## Icons:
+
+* Lucide React
+
+## API Testing:
+
+* Postman
+
+## Version Control:
+
+* Git
+* GitHub-ready structure
+
+==================================================
+
+# 2. PROJECT PURPOSE
+
+Create a centralized digital hospital management platform for managing patients, doctors, appointments, medical records, prescriptions, billing, and payments.
+
+The system should allow patients to:
+
+* Register and login
+* View and update their profile
+* Book appointments
+* View appointment status
+* View doctor details
+* View prescriptions
+* View medical records where permitted
+* View bills and payment status
+* Receive notifications
+
+Hospital administrators should be able to:
+
+* Manage patients
+* Manage doctors
+* Manage departments
+* Manage appointments
+* Manage medical records
+* Manage prescriptions
+* Generate bills
+* Track payments
+* Manage users
+* View reports
+* View dashboard statistics
+
+Doctors should be able to:
+
+* View assigned appointments
+* View patient details
+* Add diagnosis
+* Create medical records
+* Create prescriptions
+* Update appointment status
+
+==================================================
+
+# 3. USER ROLES
+
+Implement the following roles:
+
+1. Super Admin
+2. Hospital Administrator
+3. Doctor
+4. Receptionist
+5. Patient
+6. Accountant
+
+Implement proper role-based permissions.
+
+Do not give every role unlimited access.
+
+Each user should only access features appropriate to their role.
+
+==================================================
+
+# 4. PATIENT MANAGEMENT
+
+Create complete patient management functionality.
+
+Patient information:
+
+* Patient ID
+* Full Name
+* Age
+* Date of Birth
+* Gender
+* Blood Group
+* Phone Number
+* Email
+* Address
+* Emergency Contact Name
+* Emergency Contact Number
+* Registration Date
+* Patient Status
+* Created Date
+* Updated Date
+
+Patient status:
+
+* Active
+* Admitted
+* Discharged
+* Inactive
+
+Implement complete CRUD operations.
+
+CREATE:
+
+* Add a new patient
+
+READ:
+
+* View patient list
+* View individual patient details
+* Search patients
+
+UPDATE:
+
+* Edit patient information
+* Update patient status
+
+DELETE:
+
+* Delete patient records where permitted
+
+Every operation must affect the actual SQLite database.
+
+==================================================
+
+# 5. DEPARTMENT MANAGEMENT
+
+Create database-driven hospital departments.
+
+Examples:
+
+* General Medicine
+* Cardiology
+* Neurology
+* Orthopedics
+* Pediatrics
+* Dermatology
+* ENT
+* Ophthalmology
+* Emergency
+* Radiology
+* Surgery
+* Other
+
+Department fields:
+
+* Department ID
+* Department Name
+* Description
+* Status
+* Created Date
+* Updated Date
+
+Administrators should be able to:
+
+* Create
+* Read
+* Update
+* Delete
+
+departments.
+
+==================================================
+
+# 6. DOCTOR MANAGEMENT
+
+Create complete doctor management.
+
+Doctor information:
+
+* Doctor ID
+* Full Name
+* Email
+* Phone Number
+* Department
+* Specialization
+* Qualification
+* Experience
+* Consultation Fee
+* Availability Status
+* Created Date
+* Updated Date
+
+Availability status:
+
+* Available
+* Busy
+* On Leave
+* Unavailable
+
+Administrators should be able to manage doctors.
+
+Implement complete CRUD operations.
+
+Doctors should only access appointments and patient information assigned to them.
+
+==================================================
+
+# 7. APPOINTMENT MANAGEMENT
+
+Patients or receptionists can book appointments.
+
+Appointment information:
+
+* Appointment ID
+* Patient
+* Doctor
+* Department
+* Appointment Date
+* Appointment Time
+* Reason for Visit
+* Appointment Status
+* Created Date
+* Updated Date
+
+Appointment status:
+
+* Requested
+* Confirmed
+* Checked In
+* In Consultation
+* Completed
+* Cancelled
+* No Show
+
+Complete workflow:
+
+Patient/Receptionist
+
+↓
+
+Book Appointment
+
+↓
+
+Appointment Request
+
+↓
+
+Confirmation
+
+↓
+
+Patient Check-In
+
+↓
+
+Doctor Consultation
+
+↓
+
+Diagnosis
+
+↓
+
+Prescription
+
+↓
+
+Appointment Completed
+
+==================================================
+
+# 8. COMPLETE CRUD REQUIREMENTS
+
+CREATE:
+
+* Patients
+* Doctors
+* Departments
+* Appointments
+* Medical records
+* Prescriptions
+* Bills
+* Payments
+* Notifications
+
+READ:
+
+* Patient records
+* Doctor records
+* Department details
+* Appointments
+* Medical records
+* Prescriptions
+* Bills
+* Payments
+* Reports
+* Notifications
+
+UPDATE:
+
+* Patient information
+* Doctor information
+* Department details
+* Appointment details
+* Appointment status
+* Medical records
+* Prescriptions
+* Bill status
+* Payment status
+
+DELETE:
+
+* Patient records where permitted
+* Doctor records where permitted
+* Departments
+* Appointments
+* Medical records where permitted
+* Prescriptions where permitted
+* Bills or test records where permitted
+
+Every CRUD operation must use the actual SQLite database.
+
+==================================================
+
+# 9. MEDICAL RECORD MANAGEMENT
+
+Create medical records linked to patients and doctors.
+
+Medical record fields:
+
+* Record ID
+* Patient
+* Doctor
+* Appointment
+* Symptoms
+* Diagnosis
+* Notes
+* Record Date
+* Created Date
+* Updated Date
+
+Doctors can:
+
+* Create medical records
+* View records for their authorized patients
+* Update records where permitted
+
+Medical records must come from the actual database.
+
+Do not use fake/static medical data.
+
+Use fictional demo data only.
+
+==================================================
+
+# 10. PRESCRIPTION MANAGEMENT
+
+Doctors can create prescriptions.
+
+Prescription fields:
+
+* Prescription ID
+* Patient
+* Doctor
+* Appointment
+* Medicine Name
+* Dosage
+* Frequency
+* Duration
+* Instructions
+* Prescription Date
+
+Support multiple medicines in one prescription if practical.
+
+Patients should be able to view their own prescriptions.
+
+==================================================
+
+# 11. BILLING MANAGEMENT
+
+Create a billing system for hospital services.
+
+Bill information:
+
+* Bill ID
+* Patient
+* Appointment
+* Consultation Fee
+* Additional Charges
+* Discount
+* Tax where applicable
+* Total Amount
+* Payment Status
+* Bill Date
+
+Payment status:
+
+* Pending
+* Partially Paid
+* Paid
+* Cancelled
+
+The total amount should be calculated from actual values.
+
+Do not use fake billing calculations.
+
+==================================================
+
+# 12. PAYMENT MANAGEMENT
+
+Create payment records.
+
+Payment fields:
+
+* Payment ID
+* Bill
+* Patient
+* Amount
+* Payment Method
+* Transaction Reference
+* Payment Date
+* Payment Status
+
+Payment methods:
+
+* Cash
+* Card
+* UPI
+* Bank Transfer
+
+For this academic project:
+
+DO NOT integrate real payment gateways.
+
+Use database records to demonstrate payment management.
+
+When payment is recorded:
+
+* Save the payment in SQLite
+* Update the bill payment status
+* Update dashboard statistics
+
+==================================================
+
+# 13. DOCTOR DASHBOARD
+
+Doctor dashboard should display:
+
+* Today's Appointments
+* Upcoming Appointments
+* Completed Consultations
+* Total Assigned Patients
+
+Quick actions:
+
+* View Appointments
+* View Patient Details
+* Add Medical Record
+* Create Prescription
+* Update Appointment Status
+
+==================================================
+
+# 14. PATIENT DASHBOARD
+
+Patient dashboard should display:
+
+* Upcoming Appointments
+* Completed Appointments
+* My Doctors
+* My Prescriptions
+* My Medical Records where permitted
+* Pending Bills
+* Payment History
+* Notifications
+
+Quick actions:
+
+**Book Appointment**
+
+**View Prescriptions**
+
+**View Appointments**
+
+**View Bills**
+
+==================================================
+
+# 15. ADMIN DASHBOARD
+
+Create a professional hospital administrator dashboard.
+
+Dashboard cards:
+
+* Total Patients
+* Total Doctors
+* Total Departments
+* Today's Appointments
+* Upcoming Appointments
+* Completed Appointments
+* Admitted Patients
+* Discharged Patients
+* Pending Payments
+* Total Revenue
+
+Charts:
+
+* Monthly Appointments
+* Patients by Department
+* Appointment Status
+* Revenue by Month
+* Doctor Workload
+* Patient Registration Trend
+* Payment Status
+
+All dashboard statistics must be calculated from actual database records.
+
+Do not use hard-coded numbers.
+
+==================================================
+
+# 16. RECEPTIONIST DASHBOARD
+
+Show:
+
+* Today's Appointments
+* Pending Appointment Requests
+* Checked-In Patients
+* Completed Appointments
+
+Actions:
+
+* Register Patient
+* Book Appointment
+* Update Appointment
+* Cancel Appointment
+* Search Patient
+* View Doctor Availability
+
+==================================================
+
+# 17. ACCOUNTANT DASHBOARD
+
+Show:
+
+* Total Bills
+* Pending Payments
+* Paid Bills
+* Partially Paid Bills
+* Daily Revenue
+* Monthly Revenue
+
+Actions:
+
+* View Bills
+* Create Bill
+* Record Payment
+* Update Payment Status
+* Generate Financial Reports
+
+==================================================
+
+# 18. SEARCH AND FILTER
+
+Implement backend-supported search.
+
+Search by:
+
+* Patient ID
+* Patient Name
+* Phone Number
+* Doctor Name
+* Doctor Specialization
+* Department
+* Appointment ID
+* Bill ID
+
+Filter by:
+
+* Patient Status
+* Appointment Status
+* Department
+* Doctor
+* Date
+* Payment Status
+* Gender
+* Blood Group
+
+Search and filtering should work with actual database data.
+
+==================================================
+
+# 19. VALIDATION
+
+Frontend and backend validation are mandatory.
+
+Validate:
+
+* Required fields
+* Patient name
+* Age
+* Date of birth
+* Gender
+* Blood group
+* Email
+* Phone number
+* Emergency contact
+* Doctor information
+* Appointment date
+* Appointment time
+* Duplicate patient records where appropriate
+* Invalid IDs
+* Invalid appointment status
+* Invalid payment values
+* Negative billing amounts
+
+Rules:
+
+* Required fields cannot be empty
+* Age must be positive
+* Phone numbers must follow the required format
+* Email must be valid
+* Appointment date should not be invalid
+* Discharge date must not be before admission date if admission functionality is added
+* Payment amount must be valid
+
+Backend validation is mandatory.
+
+==================================================
+
+# 20. ERROR HANDLING
+
+Handle:
+
+* Invalid requests
+* Missing records
+* Invalid patient ID
+* Invalid doctor ID
+* Invalid appointment ID
+* Unauthorized access
+* Forbidden access
+* Duplicate records
+* Database errors
+* Network errors
+* API errors
+* Server errors
+
+The frontend must display user-friendly error messages.
+
+Do not expose unnecessary technical errors to users.
+
+==================================================
+
+# 21. REST API
+
+Create proper REST API endpoints.
+
+## Authentication:
+
+POST
+
+/api/auth/login/
+
+POST
+
+/api/auth/logout/
+
+## Patients:
+
+GET
+
+/api/patients/
+
+POST
+
+/api/patients/
+
+GET
+
+/api/patients/{id}/
+
+PATCH
+
+/api/patients/{id}/
+
+DELETE
+
+/api/patients/{id}/
+
+## Doctors:
+
+GET
+
+/api/doctors/
+
+POST
+
+/api/doctors/
+
+GET
+
+/api/doctors/{id}/
+
+PATCH
+
+/api/doctors/{id}/
+
+DELETE
+
+/api/doctors/{id}/
+
+## Departments:
+
+GET
+
+/api/departments/
+
+POST
+
+/api/departments/
+
+PATCH
+
+/api/departments/{id}/
+
+DELETE
+
+/api/departments/{id}/
+
+## Appointments:
+
+GET
+
+/api/appointments/
+
+POST
+
+/api/appointments/
+
+GET
+
+/api/appointments/{id}/
+
+PATCH
+
+/api/appointments/{id}/
+
+DELETE
+
+/api/appointments/{id}/
+
+## Medical Records:
+
+GET
+
+/api/medical-records/
+
+POST
+
+/api/medical-records/
+
+GET
+
+/api/medical-records/{id}/
+
+PATCH
+
+/api/medical-records/{id}/
+
+DELETE
+
+/api/medical-records/{id}/
+
+## Prescriptions:
+
+GET
+
+/api/prescriptions/
+
+POST
+
+/api/prescriptions/
+
+GET
+
+/api/prescriptions/{id}/
+
+PATCH
+
+/api/prescriptions/{id}/
+
+DELETE
+
+/api/prescriptions/{id}/
+
+## Bills:
+
+GET
+
+/api/bills/
+
+POST
+
+/api/bills/
+
+GET
+
+/api/bills/{id}/
+
+PATCH
+
+/api/bills/{id}/
+
+DELETE
+
+/api/bills/{id}/
+
+## Payments:
+
+GET
+
+/api/payments/
+
+POST
+
+/api/payments/
+
+GET
+
+/api/payments/{id}/
+
+PATCH
+
+/api/payments/{id}/
+
+## Notifications:
+
+GET
+
+/api/notifications/
+
+PATCH
+
+/api/notifications/{id}/read/
+
+## Dashboard:
+
+GET
+
+/api/dashboard/
+
+## Reports:
+
+GET
+
+/api/reports/
+
+Use proper HTTP status codes:
+
+* 200 – Success
+* 201 – Created
+* 204 – Deleted
+* 400 – Bad Request
+* 401 – Unauthorized
+* 403 – Forbidden
+* 404 – Not Found
+* 500 – Server Error
+
+==================================================
+
+# 22. DATABASE DESIGN
+
+Create the following suggested models:
+
+* User
+* Patient
+* Doctor
+* Department
+* Appointment
+* MedicalRecord
+* Prescription
+* PrescriptionMedicine
+* Bill
+* Payment
+* Notification
+
+Use:
+
+* Primary keys
+* Foreign keys
+* Unique constraints
+* Choice fields
+* Created timestamps
+* Updated timestamps
+* Proper relationships
+
+Example relationship:
+
+Patient
+
+↓
+
+Appointment
+
+↓
+
+Doctor
+
+↓
+
+Medical Record
+
+↓
+
+Prescription
+
+↓
+
+Bill
+
+↓
+
+Payment
+
+==================================================
+
+# 23. FRONTEND DESIGN
+
+Create a modern, professional hospital management interface.
+
+Design:
+
+* Modern sidebar
+* Top navigation bar
+* Dashboard cards
+* Responsive tables
+* Clean forms
+* Modals
+* Search bar
+* Filters
+* Status badges
+* Notifications
+* Profile menu
+* Loading states
+* Empty states
+* Error states
+* Confirmation dialogs
+
+Visual style:
+
+* Professional healthcare appearance
+* Clean white/light backgrounds
+* Blue healthcare accents
+* Subtle gradients
+* Modern cards
+* Rounded corners
+* Clean typography
+* Professional icons
+* Proper spacing
+
+Do NOT make the interface childish or overly colorful.
+
+Make the UI responsive for:
+
+* Desktop
+* Tablet
+* Mobile
+
+==================================================
+
+# 24. LOGIN PAGE
+
+Create a professional login page.
+
+Include:
+
+* Hospital branding
+* Application name
+* Email or username
+* Password
+* Show/hide password
+* Login button
+* Validation
+* Loading state
+* Error messages
+
+After login:
+
+Redirect users to the correct dashboard based on their role.
+
+==================================================
+
+# 25. NAVIGATION
+
+## Patient:
+
+* Dashboard
+* My Profile
+* Book Appointment
+* My Appointments
+* Prescriptions
+* Medical Records
+* Bills
+* Payments
+* Notifications
+
+## Doctor:
+
+* Dashboard
+* My Appointments
+* Patients
+* Medical Records
+* Prescriptions
+* Notifications
+* Profile
+
+## Receptionist:
+
+* Dashboard
+* Patients
+* Appointments
+* Doctor Availability
+* Notifications
+* Profile
+
+## Accountant:
+
+* Dashboard
+* Bills
+* Payments
+* Financial Reports
+* Notifications
+* Profile
+
+## Administrator:
+
+* Dashboard
+* Patients
+* Doctors
+* Departments
+* Appointments
+* Medical Records
+* Prescriptions
+* Bills
+* Payments
+* Reports
+* Users
+* Notifications
+* Profile
+
+==================================================
+
+# 26. REPORTS
+
+Create reports using actual database records.
+
+Reports:
+
+* Monthly Patient Registration
+* Monthly Appointments
+* Appointments by Department
+* Doctor Workload
+* Appointment Status
+* Patient Status
+* Revenue by Month
+* Payment Statistics
+* Pending Payments
+* Completed Consultations
+
+Provide CSV export where practical.
+
+==================================================
+
+# 27. POSTMAN TESTING
+
+Create Postman-ready APIs.
+
+Test:
+
+* Login
+* Create patient
+* Get all patients
+* Get single patient
+* Update patient
+* Delete patient
+* Create doctor
+* Create department
+* Create appointment
+* Update appointment
+* Delete appointment
+* Create medical record
+* Create prescription
+* Create bill
+* Record payment
+* Get notifications
+* Dashboard
+* Reports
+
+Create a Postman collection if possible.
+
+==================================================
+
+# 28. PROJECT STRUCTURE
+
+Create the following project structure:
+
+smart-hospital-management/
+
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── layouts/
+│   │   ├── services/
+│   │   ├── hooks/
+│   │   ├── context/
+│   │   ├── assets/
+│   │   └── utils/
+│   ├── package.json
+│   └── README.md
+
+├── backend/
+│   ├── manage.py
+│   ├── config/
+│   ├── users/
+│   ├── patients/
+│   ├── doctors/
+│   ├── departments/
+│   ├── appointments/
+│   ├── medical_records/
+│   ├── prescriptions/
+│   ├── billing/
+│   ├── notifications/
+│   ├── requirements.txt
+│   └── README.md
+
+├── docs/
+│   ├── architecture/
+│   ├── database/
+│   ├── screenshots/
+│   ├── api/
+│   └── testing/
+
+├── postman/
+│   └── hospital-management.postman_collection.json
+
+├── .env.example
+
+├── .gitignore
+
+└── README.md
+
+==================================================
+
+# 29. README DOCUMENTATION
+
+Create a complete README containing:
+
+* Project Title
+* Project Overview
+* Problem Statement
+* Objectives
+* Features
+* User Roles
+* Technology Stack
+* System Architecture
+* Database Design
+* ER Diagram
+* Installation Steps
+* Backend Setup
+* Frontend Setup
+* Environment Variables
+* How to Run
+* API Endpoints
+* Postman Testing
+* CRUD Explanation
+* Validation
+* Security
+* Screenshots
+* Testing Results
+* Challenges and Solutions
+* Future Enhancements
+
+==================================================
+
+# 30. SECURITY AND PRIVACY
+
+Implement:
+
+* Secure Django authentication
+* Password hashing
+* Role-based permissions
+* CSRF protection where applicable
+* Correct CORS configuration
+* Django ORM
+* Backend validation
+* Environment variables
+* No hard-coded passwords
+* No hard-coded API keys
+* No secrets in GitHub
+* Proper authorization
+* Safe API errors
+
+IMPORTANT:
+
+This is an academic demonstration project.
+
+Use only fictional patient data.
+
+Do not use real patient personal information.
+
+==================================================
+
+# 31. DEMO DATA
+
+Create optional Django seed/demo data.
+
+Create fictional:
+
+* Patients
+* Doctors
+* Departments
+* Appointments
+* Medical Records
+* Prescriptions
+* Bills
+* Payments
+
+Example departments:
+
+* Cardiology
+* Neurology
+* Orthopedics
+* Pediatrics
+* General Medicine
+
+Create demo users for different roles.
+
+Use fictional data only.
+
+==================================================
+
+# 32. SOP COMPLIANCE
+
+The final project MUST satisfy:
+
+✓ Requirement analysis
+
+✓ Project planning
+
+✓ Database design
+
+✓ ER diagram
+
+✓ Architecture diagram
+
+✓ Frontend development
+
+✓ Backend development
+
+✓ REST API
+
+✓ Frontend-backend integration
+
+✓ Authentication
+
+✓ Role-based authorization
+
+✓ Patient CRUD
+
+✓ Doctor CRUD
+
+✓ Department CRUD
+
+✓ Appointment CRUD
+
+✓ Medical record management
+
+✓ Prescription management
+
+✓ Billing management
+
+✓ Payment management
+
+✓ Notifications
+
+✓ Search
+
+✓ Filtering
+
+✓ Client-side validation
+
+✓ Server-side validation
+
+✓ Exception handling
+
+✓ API testing
+
+✓ Database verification
+
+✓ Responsive UI
+
+✓ Security practices
+
+✓ Git/GitHub readiness
+
+✓ README documentation
+
+✓ API documentation
+
+✓ Testing documentation
+
+✓ Screenshots
+
+✓ Installation instructions
+
+✓ Final demonstration readiness
+
+==================================================
+
+# 33. IMPORTANT DEVELOPMENT RULE
+
+DO NOT generate a static demo.
+
+Every major button must perform a real operation.
+
+Example:
+
+ADD PATIENT
+
+→ React Form
+
+→ POST /api/patients/
+
+→ Django REST Framework
+
+→ Serializer Validation
+
+→ Django ORM
+
+→ SQLite Database
+
+→ JSON Response
+
+→ UI Refresh
+
+BOOK APPOINTMENT
+
+→ React Form
+
+→ POST /api/appointments/
+
+→ Django REST Framework
+
+→ SQLite Database
+
+→ Notification
+
+→ Dashboard Update
+
+UPDATE APPOINTMENT
+
+→ PATCH API
+
+→ Database Update
+
+→ UI Refresh
+
+CREATE PRESCRIPTION
+
+→ React Form
+
+→ POST API
+
+→ Database
+
+→ Patient Can View Prescription
+
+CREATE BILL
+
+→ Database Bill Record
+
+RECORD PAYMENT
+
+→ Database Payment Record
+
+→ Bill Payment Status Updates
+
+DELETE PATIENT
+
+→ DELETE API
+
+→ SQLite
+
+→ UI Refresh
+
+Do not use fake arrays as the main source of application data.
+
+Do not use localStorage as the primary database.
+
+SQLite must be the real database.
+
+==================================================
+
+# 34. QUALITY VERIFICATION
+
+Before considering the project complete:
+
+1. Run the Django backend.
+2. Run the React frontend.
+3. Verify SQLite database.
+4. Run migrations.
+5. Test login.
+6. Test different user roles.
+7. Test Patient CREATE.
+8. Test Patient READ.
+9. Test Patient UPDATE.
+10. Test Patient DELETE.
+11. Test Doctor CRUD.
+12. Test Department CRUD.
+13. Test Appointment CRUD.
+14. Test Medical Record creation.
+15. Test Prescription creation.
+16. Test Bill creation.
+17. Test Payment recording.
+18. Test search and filtering.
+19. Test frontend validation.
+20. Test backend validation.
+21. Test API endpoints using Postman.
+22. Test dashboard statistics.
+23. Test error handling.
+24. Test mobile responsiveness.
+25. Verify that every major operation uses the actual SQLite database.
+
+==================================================
+
+# FINAL REQUIREMENT
+
+Generate the COMPLETE working application.
+
+Do not stop at UI design.
+
+Do not generate placeholder functionality.
+
+Do not generate fake CRUD.
+
+All major features must work from frontend to backend.
+
+The final workflow must be:
+
+**React Frontend**
+
+↓
+
+**REST API**
+
+↓
+
+**Django REST Framework**
+
+↓
+
+**Django ORM**
+
+↓
+
+**SQLite Database**
+
+↓
+
+**Actual data returned to frontend**
+
+The project should be professional, clean, responsive, functional, and suitable for a college **CRUD-Based Web Application** evaluation and viva.
